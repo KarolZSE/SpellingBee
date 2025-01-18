@@ -254,7 +254,6 @@ function DatabaseCall(SaveScoreToDatabase, name, mistakes, finished) {
         // Add a new document with a generated id.
         console.log("IMPORTANT" + SaveScoreToDatabase);
         if (SaveScoreToDatabase == 1) {
-            console.log("IMPORTANT" + name.value);
             addDoc(collection(db, "spellingbee"), {
                 uid: uid,
                 name: name.value,
@@ -286,7 +285,6 @@ listItem.innerHTML = `<span id="lspam">${userName}</span><span id="lspam">${user
 listItem.setAttribute('data-user-score', userFinishedWords);
 await console.log(listItem.getAttribute('data-user-score'));
 leaderboardList.appendChild(listItem);
-console.log(`User ${userDoc.id} has ${userName} no documents in the subcollection.`);
 
 }
 await sortList();
@@ -354,7 +352,6 @@ async function GetWord() {
     try {
         let wordResponse = await fetch("https://random-word-api.herokuapp.com/word?number=1");
         wordJson = await wordResponse.json();
-        console.log(wordJson[0]);
         wordElement.innerHTML = wrapWordInSpans(wordJson[0]);
         
         let dictionaryResponse = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordJson[0]}`);
@@ -424,8 +421,6 @@ window.addEventListener("keydown", function(event) {
                 i++;
             }
         }
-        console.log(event.key);
-        console.log(spans[i]?.textContent);
         if (spans[i]?.textContent === undefined) {
             wordElement.innerHTML = `<h2>You have correctly spelled ${wordJson[0]}!</h2>`;
             finished++;
