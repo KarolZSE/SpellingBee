@@ -1,0 +1,165 @@
+body {
+    overflow: hidden;
+    margin: 0;
+    font-family: "Playwrite AU SA", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+#back {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+line {
+    stroke: rgb(255, 255, 255);
+    stroke-width: 5;
+}
+
+span {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#lspam {
+    opacity: 1;
+    font-size: smaller;
+}
+
+#menu {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: 86.74vh;
+    width: 40%;
+    border: 6.63vh solid;
+    border-image: radial-gradient(circle, rgb(255, 255, 255), rgba(255, 255, 255, 0) 80%) 49% stretch;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+}
+
+#starting-menu-content {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+}
+
+#starting-menu-content p {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#menu-content {
+    display: none;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+}
+
+#bottom {
+    display: flex;
+    margin-top: auto;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#bottom p { 
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+button {
+    height: 40px;
+    font-family: "Playwrite AU SA", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+#SaveScore {
+    margin-top: auto;
+}
+
+#name {
+    position: relative;
+    margin-left: 8px;
+    top: -1vh;
+    font-family: "Playwrite AU SA", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    text-align: center;
+	height: 4.125vh;
+	font-size: 0.67vw;
+}
+
+#parental-leaderboard {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-top: -97.92vh;
+    height: 95.84vh;
+    }
+
+#leaderboard {
+    width: 20%;
+    height: 100%;
+    border: 3.604vh solid;
+    border-image: radial-gradient(circle, rgb(255, 255, 255), rgba(255, 255, 255, 0) 80%) 49% stretch;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+#leaderboard-content {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow-y: scroll;
+    }
+
+#leaderboard-content > p {
+    display: flex;
+    justify-content: space-between;
+}
+    
+ol {
+    padding: 0;
+    margin: 10px;
+}
+
+li {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute only spans */
+    list-style: none; /* Remove default marker */
+    counter-increment: list-counter; /* Increment custom counter */
+}
+
+ol {
+    counter-reset: list-counter; /* Initialize custom counter */
+}
+
+li > span:first-child::before {
+    content: counter(list-counter) "."; /* Add the number directly before the first span */
+    color: black; /* Number color */
+    margin-right: 0; /* No space between number and text */
+}
